@@ -1,0 +1,37 @@
+/* * @format
+
+/*  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,600;8..144,700;8..144,800&display=swap");
+
+/* TODO: Define colors */
+:root {
+  --color-brand--1: #fff275;
+  --color-brand--2: #6699cc;
+
+  --color-dark--0: #1e1f1f;
+  --color-dark--1: #282a2a;
+  --color-dark--2: #464949;
+  --color-light--1: #cccccc;
+  --color-light--2: #d6d6d6;
+  --color-light--3: #f5f5f5;
+}
+
+/* TODO:  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Serif", serif;
+  color: var(--color-dark--0);
+  background-color: var(--color-light--3);
+  font-weight: 400;
+  line-height: 1.6;
+}
