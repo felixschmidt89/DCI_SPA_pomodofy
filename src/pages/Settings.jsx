@@ -1,14 +1,21 @@
 /** @format */
 
-import PageNav from "../components/PageNav";
+import React from "react";
+import SetLongBreakDuration from "../components/SetLongBreakDuration";
+import SetSessionsPerRound from "../components/SetSessionsPerRound";
+import SetShortBreakDuration from "../components/SetShortBreakDuration";
+import SetTimerDuration from "../components/SetTimerDuration";
 
-function Settings() {
+const Settings = () => {
   return (
     <div>
-      <PageNav />
-      <h1>Settings</h1>
+      <h2>Timer Settings</h2>
+      <SetTimerDuration />
+      <SetShortBreakDuration />
+      <SetLongBreakDuration />
+      <SetSessionsPerRound />
     </div>
   );
-}
+};
 
 export default Settings;

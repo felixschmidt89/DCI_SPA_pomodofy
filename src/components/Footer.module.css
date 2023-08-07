@@ -1,0 +1,26 @@
+/**
+ * Footer.module.css
+ *
+ * @format
+ */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.copyright {
+  font-size: 20px;
+  color: #555;
+}

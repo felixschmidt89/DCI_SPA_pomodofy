@@ -1,14 +1,14 @@
 /** @format */
 
-import PageNav from "../components/PageNav";
+import Timer from "../components/Timer";
+import TimerStatus from "../components/TimerStatus";
 
 function Pomodofy() {
   return (
-    <div>
-      <PageNav />
-
-      <h1>Timer</h1>
-    </div>
+    <main>
+      <Timer />
+      <TimerStatus />
+    </main>
   );
 }
 

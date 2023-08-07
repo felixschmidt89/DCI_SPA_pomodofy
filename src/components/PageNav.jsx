@@ -1,23 +1,25 @@
 /** @format */
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
 import styles from "./PageNav.module.css";
 
 function PageNav() {
   return (
     <nav className={styles.nav}>
+      <Logo />
       <ul>
         <li>
-          <Link to='/pomodofy'>Timer</Link>
+          <NavLink to='/'>Timer</NavLink>
         </li>
         <li>
-          <Link to='/info'>Info</Link>
+          <NavLink to='/info'>About</NavLink>
         </li>
         <li>
-          <Link to='/settings'>Settings</Link>
+          <NavLink to='/settings'>Settings</NavLink>
         </li>
         <li>
-          <Link to='/impressum'>Legal note</Link>
+          <NavLink to='/impressum'>Legal notice</NavLink>
         </li>
       </ul>
     </nav>

@@ -2,8 +2,10 @@
 
 .nav {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .nav ul {
@@ -11,6 +13,8 @@
   display: flex;
   align-items: center;
   gap: 4rem;
+  margin-right: 4rem;
+  align-self: center;
 }
 
 .nav a:link,
