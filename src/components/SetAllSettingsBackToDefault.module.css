@@ -1,0 +1,8 @@
+/** @format */
+
+.container {
+  max-width: 60rem;
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+}

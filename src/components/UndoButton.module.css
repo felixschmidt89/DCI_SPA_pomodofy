@@ -1,0 +1,17 @@
+/**
+ * UndoButton.module.css
+ *
+ * @format
+ */
+
+.undoButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.buttonText {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

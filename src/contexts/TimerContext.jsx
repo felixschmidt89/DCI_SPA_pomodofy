@@ -1,14 +1,26 @@
 /** @format */
 
 import React, { createContext, useState } from "react";
+import {
+  timerMinutesDefault,
+  shortBreakDurationDefault,
+  longBreakDurationDefault,
+  sessionsPerRoundDefault,
+} from "../constants/timerConstants";
 
 const TimerContext = createContext();
 
 const TimerProvider = ({ children }) => {
-  const [timer, setTimer] = useState(1 * 10);
-  const [shortBreakDuration, setShortBreakDuration] = useState(1 * 5);
-  const [longBreakDuration, setLongBreakDuration] = useState(1 * 8);
-  const [sessionsPerRound, setSessionsPerRound] = useState(4);
+  const [timer, setTimer] = useState(timerMinutesDefault * 60);
+  const [shortBreakDuration, setShortBreakDuration] = useState(
+    shortBreakDurationDefault * 60
+  );
+  const [longBreakDuration, setLongBreakDuration] = useState(
+    longBreakDurationDefault * 60
+  );
+  const [sessionsPerRound, setSessionsPerRound] = useState(
+    sessionsPerRoundDefault
+  );
 
   return (
     <TimerContext.Provider

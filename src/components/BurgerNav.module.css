@@ -2,20 +2,33 @@
 
 .nav {
   display: flex;
-  flex-direction: column; /* Adjust the flex direction for mobile layout */
-  align-items: flex-end;
+  flex-direction: row; /* Adjust the flex direction for mobile layout */
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90vw;
   gap: 2rem;
-  margin: 1rem;
+  font-size: 3rem;
+}
+
+.nav .appName {
   font-size: 2rem;
+  position: fixed;
+  top: 1%;
+  left: 40%;
+}
+
+.nav .menuButton {
+  position: fixed;
+  right: 1rem;
 }
 
 .nav ul {
   list-style: none;
   display: none; /* Hide the nav links by default */
   flex-direction: column; /* Adjust the flex direction for mobile layout */
-  gap: 1rem;
-  margin-right: 0; /* No margin for mobile layout */
-  align-self: flex-end;
+
+  margin-top: 4rem;
+  line-height: 2rem;
 }
 
 .nav a:link,
