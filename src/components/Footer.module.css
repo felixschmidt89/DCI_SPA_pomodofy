@@ -9,18 +9,20 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: var(--color-light--3);
   padding: 10px;
   text-align: center;
 }
 
-.logo {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+.footer a:link,
+.footer a:visited {
+  text-decoration: none;
+  font-size: 2.5rem;
+  margin: 1rem;
+  color: var(--color-dark--2);
 }
 
-.copyright {
-  font-size: 20px;
-  color: #555;
+.footer a:hover,
+.footer a:active {
+  color: var(--color-dark--0);
 }

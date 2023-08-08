@@ -1,33 +1,27 @@
 /** @format */
 .container {
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .container h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-align: center;
+  text-decoration: underline;
 }
 
 .container p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .container h1 {
-    font-size: 1.25rem;
-  }
-
-  .container p {
-    font-size: 0.875rem;
-  }
+.note {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1rem;
 }

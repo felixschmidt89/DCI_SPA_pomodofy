@@ -5,8 +5,9 @@ import styles from "./Info.module.css";
 
 function Info() {
   return (
-    <div className={styles["info-container"]}>
-      <h1>Pomodofy: The Pomodoro Technique Web App</h1>
+    <div className={styles.container}>
+      <h1>About</h1>
+      <h2>Pomodofy: The Pomodoro Technique Web App</h2>
       <p>
         Pomodofy is a web application designed to boost productivity and improve
         focus using the Pomodoro Technique, a time management method developed
@@ -37,6 +38,13 @@ function Info() {
         <li>
           Take longer breaks: After completing four Pomodoros (four 25-minute
           work intervals), take a longer break of around 15-30 minutes.
+        </li>
+        <li>
+          Customize Work and Break Intervals: While the traditional Pomodoro
+          technique suggests a 25-minute work interval followed by a 5-minute
+          break, and a longer break after four Pomodoros, feel free to adjust
+          these intervals based on your preferences and work habits. Experiment
+          with different timings to find what suits you best.
         </li>
       </ol>
     </div>

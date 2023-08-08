@@ -7,7 +7,9 @@ function Impressum() {
   return (
     <div className={styles.container}>
       <h1>Legal notice</h1>
-      <p>As required by the Telemediengesetz for German websites.</p>
+      <p className={styles.note}>
+        As required by the Telemediengesetz for German websites.
+      </p>
       <p>
         <b>Angaben gemäß § 5 TMG</b>
         <br />

@@ -10,7 +10,7 @@ function PageNav() {
       <Logo />
       <ul>
         <li>
-          <NavLink to='/'>Timer</NavLink>
+          <NavLink to='/'>Pomodofy</NavLink>
         </li>
         <li>
           <NavLink to='/info'>About</NavLink>

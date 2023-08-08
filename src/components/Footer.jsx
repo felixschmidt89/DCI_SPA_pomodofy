@@ -14,13 +14,13 @@ const Footer = () => {
           href='https://github.com/felixschmidt89/pomodofy'
           target='_blank'
           rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faGithub} className={styles.logo} />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
         <a
           href='https://uib-final-project-bootstrap-version.netlify.app/'
           target='_blank'
           rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faCopyright} className={styles.copyright} />
+          <FontAwesomeIcon icon={faCopyright} />
         </a>
       </div>
     </footer>
