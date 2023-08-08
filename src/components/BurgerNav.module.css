@@ -1,0 +1,40 @@
+/** @format */
+
+.nav {
+  display: flex;
+  flex-direction: column; /* Adjust the flex direction for mobile layout */
+  align-items: flex-end;
+  gap: 2rem;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: none; /* Hide the nav links by default */
+  flex-direction: column; /* Adjust the flex direction for mobile layout */
+  gap: 1rem;
+  margin-right: 0; /* No margin for mobile layout */
+  align-self: flex-end;
+}
+
+.nav a:link,
+.nav a:visited {
+  text-decoration: none;
+  color: var(--color-dark--2);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav a:hover,
+.nav a:active {
+  color: var(--color-dark--0);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .nav ul.open {
+    display: flex; /* Show the nav links when the menu is open */
+  }
+}
