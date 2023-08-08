@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import {
   timerMinutesDefault,
   shortBreakDurationDefault,
@@ -11,16 +11,29 @@ import {
 const TimerContext = createContext();
 
 const TimerProvider = ({ children }) => {
-  const [timer, setTimer] = useState(timerMinutesDefault * 60);
+  const [timer, setTimer] = useState(
+    parseInt(localStorage.getItem("timer")) || timerMinutesDefault * 60
+  );
   const [shortBreakDuration, setShortBreakDuration] = useState(
-    shortBreakDurationDefault * 60
+    parseInt(localStorage.getItem("shortBreakDuration")) ||
+      shortBreakDurationDefault * 60
   );
   const [longBreakDuration, setLongBreakDuration] = useState(
-    longBreakDurationDefault * 60
+    parseInt(localStorage.getItem("longBreakDuration")) ||
+      longBreakDurationDefault * 60
   );
   const [sessionsPerRound, setSessionsPerRound] = useState(
-    sessionsPerRoundDefault
+    parseInt(localStorage.getItem("sessionsPerRound")) ||
+      sessionsPerRoundDefault
   );
+
+  // Update localStorage whenever the state changes
+  useEffect(() => {
+    localStorage.setItem("timer", timer);
+    localStorage.setItem("shortBreakDuration", shortBreakDuration);
+    localStorage.setItem("longBreakDuration", longBreakDuration);
+    localStorage.setItem("sessionsPerRound", sessionsPerRound);
+  }, [timer, shortBreakDuration, longBreakDuration, sessionsPerRound]);
 
   return (
     <TimerContext.Provider
