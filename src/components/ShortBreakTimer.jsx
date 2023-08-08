@@ -8,7 +8,7 @@ import ResetButton from "./ResetButton";
 import FinishedSound from "./FinishedSound"; // Import the renamed component
 
 function ShortBreakTimer() {
-  const { shortBreakDuration } = useContext(TimerContext); // Use shortBreakDuration from context
+  const { shortBreakDuration } = useContext(TimerContext);
   const [timeRemaining, setTimeRemaining] = useState(shortBreakDuration);
   const [timerActive, setTimerActive] = useState(false);
 
@@ -26,13 +26,20 @@ function ShortBreakTimer() {
     } else if (timeRemaining <= 0) {
       setTimerActive(false);
       clearInterval(timerInterval);
+
       // Play finished sound when timer finishes
+      const audio = new Audio("public/success-sound.mp3");
+      audio.play().catch((error) => {
+        console.error("Error playing sound:", error);
+      });
+
+      setTimeRemaining(shortBreakDuration); // Reset timer
     }
 
     return () => {
       clearInterval(timerInterval);
     };
-  }, [timerActive, timeRemaining]);
+  }, [timerActive, timeRemaining, shortBreakDuration]);
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);

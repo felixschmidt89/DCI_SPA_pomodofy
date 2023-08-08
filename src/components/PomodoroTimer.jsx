@@ -5,10 +5,10 @@ import { TimerContext } from "../contexts/TimerContext";
 import StartButton from "./StartButton";
 import PauseButton from "./PauseButton";
 import ResetButton from "./ResetButton";
-import FinishedSound from "./FinishedSound"; // Import the renamed component
+import { timerMinutesDefault } from "../constants/timerConstants";
 
 function PomodoroTimer() {
-  const { timer } = useContext(TimerContext);
+  const { timer, setFinishedSessions } = useContext(TimerContext);
   const [timeRemaining, setTimeRemaining] = useState(timer);
   const [timerActive, setTimerActive] = useState(false);
 
@@ -26,13 +26,20 @@ function PomodoroTimer() {
     } else if (timeRemaining <= 0) {
       setTimerActive(false);
       clearInterval(timerInterval);
+      setFinishedSessions((prevSessions) => prevSessions + 1); // Increase finishedSessions
+      setTimeRemaining(timer); // Reset displayed timer to default value
+
       // Play finished sound when timer finishes
+      const audio = new Audio("public/success-sound.mp3");
+      audio.play().catch((error) => {
+        console.error("Error playing sound:", error);
+      });
     }
 
     return () => {
       clearInterval(timerInterval);
     };
-  }, [timerActive, timeRemaining]);
+  }, [timerActive, timeRemaining, setFinishedSessions, timer]);
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -57,7 +64,7 @@ function PomodoroTimer() {
 
       <ResetButton onClick={handleReset} />
 
-      {timeRemaining <= 0 && <FinishedSound src='public/success-sound.mp3' />}
+      {/* No need for the <FinishedSound /> component here */}
     </div>
   );
 }
