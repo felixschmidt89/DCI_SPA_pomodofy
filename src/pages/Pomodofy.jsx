@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import BreakTimer from "../components/BreakTimer";
 import PomodoroTimer from "../components/PomodoroTimer";
-import Stats from "../components/RoundProgress";
+import Stats from "../components/CurrentRoundProgress";
 
 function Pomodofy() {
   const [isPomodoro, setIsPomodoro] = useState(true);
@@ -19,7 +19,6 @@ function Pomodofy() {
       ) : (
         <BreakTimer onTimerFinish={handleTimerFinish} />
       )}
-      <Stats />
     </main>
   );
 }

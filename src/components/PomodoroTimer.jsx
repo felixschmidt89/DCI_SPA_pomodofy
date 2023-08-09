@@ -5,6 +5,8 @@ import { TimerContext } from "../contexts/TimerContext";
 import TimerButton from "./TimerButton";
 import playSound from "../utils/playSoundUtils";
 import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils";
+import styles from "./PomodoroTimer.module.css";
+import RoundProgress from "./CurrentRoundProgress";
 
 function PomodoroTimer({ onTimerFinish }) {
   const {
@@ -75,14 +77,20 @@ function PomodoroTimer({ onTimerFinish }) {
   };
 
   return (
-    <div>
-      <p>Pomodoro session {remainingSecondsToMinutes(timeRemaining)}</p>
+    <div className={styles.container}>
+      <p className={styles.sessionType}>Pomodoro session</p>
+      <span className={styles.timer}>
+        {remainingSecondsToMinutes(timeRemaining)}
+      </span>
 
-      <TimerButton
-        type={timerActive ? "pause" : "start"}
-        onClick={timerActive ? () => setTimerActive(false) : handleStart} // Toggle timer
-      />
-      <TimerButton type='reset' onClick={handleReset} />
+      <div className={styles.buttons}>
+        <TimerButton
+          type={timerActive ? "pause" : "start"}
+          onClick={timerActive ? () => setTimerActive(false) : handleStart} // Toggle timer
+        />
+        <TimerButton type='reset' onClick={handleReset} />
+      </div>
+      <RoundProgress />
     </div>
   );
 }

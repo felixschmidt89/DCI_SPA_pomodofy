@@ -1,7 +1,27 @@
 /** @format */
 
-.logo {
-  height: 6rem;
-  margin-left: 3rem;
-  margin-top: 1rem;
+@media (min-width: 768px) {
+  .logo {
+    height: 8rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Apply styles for screens larger than tablets */
+@media (min-width: 992px) {
+  .logo {
+    height: 10rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+}
+
+/* Apply styles for screens larger than laptops/desktops */
+@media (min-width: 1200px) {
+  .logo {
+    height: 12rem;
+    margin-left: 4rem;
+    margin-top: 4rem;
+  }
 }

@@ -11,8 +11,7 @@ const SetTimerDuration = () => {
 
   const handleDurationChange = (event) => {
     const newDurationValue = parseInt(event.target.value, 10);
-    const clampedDuration = Math.max(15, Math.min(newDurationValue, 45));
-    setTimer(clampedDuration * 60); // Convert minutes to seconds
+    setTimer(newDurationValue * 60); // Convert minutes to seconds
   };
 
   const handleReset = () => {

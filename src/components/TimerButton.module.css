@@ -1,33 +1,23 @@
-/** @format */
+/**
+ * TimerButton.module.css
+ *
+ * @format
+ */
 
 .start-button,
 .pause-button,
 .reset-button {
-  /* Define common button styles */
-  padding: 10px 15px;
-  font-size: 16px;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
+  font-size: 1.8rem;
+  color: var(--color-dark--2);
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
-.start-button {
-  /* Customize styles for the start button */
-  background-color: #4caf50;
-  color: white;
+.start-button:hover,
+.pause-button:hover,
+.reset-button:hover {
+  color: var(--color-dark--0);
 }
-
-.pause-button {
-  /* Customize styles for the pause button */
-  background-color: #f39c12;
-  color: white;
-}
-
-.reset-button {
-  /* Customize styles for the reset button */
-  background-color: #e74c3c;
-  color: white;
-}
-
-/* Add more styles as needed for your PomodoroTimer component */

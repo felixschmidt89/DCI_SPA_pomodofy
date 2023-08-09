@@ -32,7 +32,7 @@ const SetLongBreakDuration = () => {
           type='range'
           value={longBreakDuration / 60}
           onChange={handleDurationChange}
-          min={20}
+          min={15}
           max={60}
           className={styles.inputRange}
         />

@@ -8,10 +8,17 @@
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 1rem;
+  font-family: "Roboto Serif", serif;
+  color: var(--color-dark--2);
 }
 
 .buttonText {
   font-size: 1.5rem;
   font-weight: bold;
+  color: var(--color-dark--2);
+}
+
+.buttonText:hover,
+.undoButton:hover {
+  color: var(--color-dark--0);
 }

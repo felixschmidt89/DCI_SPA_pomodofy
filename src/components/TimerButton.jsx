@@ -3,6 +3,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faUndo } from "@fortawesome/free-solid-svg-icons";
+import styles from "./TimerButton.module.css";
 
 const TimerButton = ({ type, onClick }) => {
   // Initialize a variable to store the FontAwesome icon associated with the button type
@@ -26,7 +27,7 @@ const TimerButton = ({ type, onClick }) => {
 
   // Render the button with the appropriate icon and click handler
   return (
-    <button className={`${type}-button`} onClick={onClick}>
+    <button className={`${styles[type + "-button"]}`} onClick={onClick}>
       <FontAwesomeIcon icon={icon} />
     </button>
   );
