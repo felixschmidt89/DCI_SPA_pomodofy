@@ -2,11 +2,20 @@
 
 import React, { useContext, useState, useEffect } from "react";
 import { TimerContext } from "../contexts/TimerContext";
-import TimerButton from "./TimerButton"; // Import the TimerButton component
-import { timerMinutesDefault } from "../constants/timerConstants";
+import TimerButton from "./TimerButton";
+import playSound from "../utils/playSoundUtils";
+import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils";
 
-function PomodoroTimer() {
-  const { timer, setFinishedSessions } = useContext(TimerContext);
+function PomodoroTimer({ onTimerFinish }) {
+  const {
+    timer,
+    setFinishedSessions,
+    finishedSessionsCurrentRound,
+    setFinishedSessionsCurrentRound,
+    setSessionFinished,
+    sessionsPerRound,
+  } = useContext(TimerContext);
+
   const [timeRemaining, setTimeRemaining] = useState(timer);
   const [timerActive, setTimerActive] = useState(false);
 
@@ -27,35 +36,50 @@ function PomodoroTimer() {
       setFinishedSessions((prevSessions) => prevSessions + 1);
       setTimeRemaining(timer);
 
-      const audio = new Audio("public/success-sound.mp3");
-      audio.play().catch((error) => {
-        console.error("Error playing sound:", error);
-      });
+      if (finishedSessionsCurrentRound + 1 === sessionsPerRound) {
+        setSessionFinished(true); // Set sessionFinished to true
+        setFinishedSessionsCurrentRound(0); // Reset finishedSessionsCurrentRound
+      } else {
+        setSessionFinished(false); // Reset sessionFinished
+        setFinishedSessionsCurrentRound((prevSessions) => prevSessions + 1); // Increment finishedSessionsCurrentRound
+      }
+
+      playSound("public/success-sound.mp3");
+      onTimerFinish();
     }
 
     return () => {
       clearInterval(timerInterval);
     };
-  }, [timerActive, timeRemaining, setFinishedSessions, timer]);
+  }, [
+    timerActive,
+    timeRemaining,
+    setFinishedSessions,
+    setFinishedSessionsCurrentRound,
+    setSessionFinished,
+    timer,
+    finishedSessionsCurrentRound,
+    sessionsPerRound,
+  ]);
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  const handleStart = () => {
+    setTimerActive(true); // Start the timer
+    setSessionFinished(false); // Prevent bugs regarding rendering BreakTimer afterwards from happening
   };
 
   const handleReset = () => {
     setTimerActive(false);
     setTimeRemaining(timer);
+    setSessionFinished(false); // Reset sessionFinished
   };
 
   return (
     <div>
-      <p>Pomodoro session {formatTime(timeRemaining)}</p>
+      <p>Pomodoro session {remainingSecondsToMinutes(timeRemaining)}</p>
 
       <TimerButton
         type={timerActive ? "pause" : "start"}
-        onClick={() => setTimerActive(!timerActive)}
+        onClick={timerActive ? () => setTimerActive(false) : handleStart} // Toggle timer
       />
       <TimerButton type='reset' onClick={handleReset} />
     </div>

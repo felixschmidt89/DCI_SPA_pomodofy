@@ -1,31 +1,33 @@
+/** @format */
 
-.start-button, .pause-button, .reset-button {
-    /* Define common button styles */
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .start-button {
-    /* Customize styles for the start button */
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .pause-button {
-    /* Customize styles for the pause button */
-    background-color: #f39c12;
-    color: white;
-  }
-  
-  .reset-button {
-    /* Customize styles for the reset button */
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  /* Add more styles as needed for your PomodoroTimer component */
-  
+.start-button,
+.pause-button,
+.reset-button {
+  /* Define common button styles */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.start-button {
+  /* Customize styles for the start button */
+  background-color: #4caf50;
+  color: white;
+}
+
+.pause-button {
+  /* Customize styles for the pause button */
+  background-color: #f39c12;
+  color: white;
+}
+
+.reset-button {
+  /* Customize styles for the reset button */
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Add more styles as needed for your PomodoroTimer component */

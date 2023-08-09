@@ -15,9 +15,19 @@
   text-decoration: underline;
 }
 
-.container p {
+.container h2,
+h3 {
+  text-align: left;
+}
+
+.container h3 {
+  font-size: 1.3rem;
+}
+
+contin .container p {
   font-size: 1.2rem;
   line-height: 1.6;
+  margin-bottom: 0.6rem;
 }
 
 .note {
