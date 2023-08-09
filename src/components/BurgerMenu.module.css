@@ -13,26 +13,39 @@
   background-color: var(--color-dark--2);
   transition: top 0.2s ease-in-out;
   overflow-y: auto;
-  display: flex; /* Add flex display */
-  flex-direction: column; /* Set flex direction to column */
-  align-items: flex-end; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
+  display: flex;
+  flex-direction: column;
 }
 
+/* Apply styles to show the menu when open */
 .open {
   top: 0;
 }
 
+/* Apply styles to navigation links */
 .navLinks li {
   padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .navLinks li a {
   text-decoration: none;
-  color: var(color-light--1);
+  color: var(--color-light--1); /* Use the defined color variable */
   transition: color 0.3s ease-in-out;
+  text-transform: uppercase;
 }
 
-.navLinks li a:hover {
-  color: var(color-light--3);
+/* Apply styles on hover and active states */
+.navLinks li a:hover,
+.navLinks li a:active {
+  color: var(--color-light--3);
+}
+
+/* Apply styles to default and visited link states */
+.navLinks a:link,
+.navLinks a:visited {
+  color: var(--color-light--1);
 }

@@ -6,19 +6,4 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 98vw;
-  font-size: 3rem;
-}
-
-.nav a:link,
-.nav a:visited {
-  text-decoration: none;
-  color: var(--color-light--1);
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.nav a:hover,
-.nav a:active {
-  color: var(--color-light--3);
 }
