@@ -8,6 +8,7 @@ import SetSessionsPerRound from "../components/SetSessionsPerRound";
 import SetShortBreakDuration from "../components/SetShortBreakDuration";
 import SetTimerDuration from "../components/SetTimerDuration";
 import SetAllSettingsBackToDefault from "../components/SetAllSettingsBackToDefault";
+import ResetFinishedSessionsCurrentRound from "../components/ResetFinishedSessionsCurrentRound";
 
 const Settings = () => {
   return (
@@ -18,6 +19,7 @@ const Settings = () => {
       <SetLongBreakDuration />
       <SetSessionsPerRound />
       <SetAllSettingsBackToDefault />
+      <ResetFinishedSessionsCurrentRound />
     </div>
   );
 };

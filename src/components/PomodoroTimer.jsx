@@ -60,6 +60,7 @@ function PomodoroTimer({ onTimerFinish }) {
     timer,
     finishedSessionsCurrentRound,
     sessionsPerRound,
+    onTimerFinish,
   ]);
 
   const handleStart = () => {

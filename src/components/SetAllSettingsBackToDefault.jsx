@@ -39,7 +39,7 @@ const SetAllSettingsBackToDefault = () => {
   return (
     <div className={styles.container}>
       {shouldRenderUndoAllButton && (
-        <UndoButton onUndo={handleUndoAll}>Undo all changes</UndoButton>
+        <UndoButton onUndo={handleUndoAll}>Set default settings</UndoButton>
       )}
     </div>
   );

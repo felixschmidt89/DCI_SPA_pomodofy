@@ -41,6 +41,7 @@ function BreakTimer({ onTimerFinish }) {
     sessionFinished,
     shortBreakDuration,
     longBreakDuration,
+    onTimerFinish,
   ]);
 
   const handleReset = () => {

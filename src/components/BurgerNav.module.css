@@ -5,36 +5,14 @@
   flex-direction: row; /* Adjust the flex direction for mobile layout */
   justify-content: space-between;
   align-items: flex-start;
-  width: 90vw;
-  gap: 2rem;
+  width: 98vw;
   font-size: 3rem;
-}
-
-.nav .appName {
-  font-size: 2rem;
-  position: fixed;
-  top: 1%;
-  left: 40%;
-}
-
-.nav .menuButton {
-  position: fixed;
-  right: 1rem;
-}
-
-.nav ul {
-  list-style: none;
-  display: none; /* Hide the nav links by default */
-  flex-direction: column; /* Adjust the flex direction for mobile layout */
-
-  margin-top: 4rem;
-  line-height: 2rem;
 }
 
 .nav a:link,
 .nav a:visited {
   text-decoration: none;
-  color: var(--color-dark--2);
+  color: var(--color-light--1);
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 600;
@@ -42,12 +20,5 @@
 
 .nav a:hover,
 .nav a:active {
-  color: var(--color-dark--0);
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .nav ul.open {
-    display: flex; /* Show the nav links when the menu is open */
-  }
+  color: var(--color-light--3);
 }
