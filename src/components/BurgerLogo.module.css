@@ -1,5 +1,10 @@
-/** @format */
+/**
+ * BurgerLogo CSS module
+ *
+ * @format
+ */
 
 .logo {
   height: 5rem;
+  /* Add more styles as needed */
 }

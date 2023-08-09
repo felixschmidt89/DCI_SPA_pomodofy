@@ -2,10 +2,9 @@
 
 import React, { useContext, useState, useEffect } from "react";
 import { TimerContext } from "../contexts/TimerContext";
-import StartButton from "./StartButton";
-import PauseButton from "./PauseButton";
-import ResetButton from "./ResetButton";
-import FinishedSound from "./FinishedSound"; // Import the renamed component
+import TimerButton from "./TimerButton";
+import playSound from "../utils/playSoundUtils"; // Import the playSound function
+import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils"; // Import the utility function
 
 function ShortBreakTimer() {
   const { shortBreakDuration } = useContext(TimerContext);
@@ -13,58 +12,45 @@ function ShortBreakTimer() {
   const [timerActive, setTimerActive] = useState(false);
 
   useEffect(() => {
-    setTimeRemaining(shortBreakDuration);
-  }, [shortBreakDuration]);
-
-  useEffect(() => {
     let timerInterval;
 
+    // Start or resume the timer
     if (timerActive && timeRemaining > 0) {
       timerInterval = setInterval(() => {
+        // Decrease the time remaining by 1 second
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
-    } else if (timeRemaining <= 0) {
-      setTimerActive(false);
-      clearInterval(timerInterval);
-
-      // Play finished sound when timer finishes
-      const audio = new Audio("public/success-sound.mp3");
-      audio.play().catch((error) => {
-        console.error("Error playing sound:", error);
-      });
-
-      setTimeRemaining(shortBreakDuration); // Reset timer
+    }
+    // Timer finished
+    else if (timeRemaining <= 0) {
+      setTimerActive(false); // Pause the timer
+      playSound("public/success-sound.mp3"); // Play sound when timer finishes
+      setTimeRemaining(shortBreakDuration); // Reset the timer to the initial duration
     }
 
     return () => {
-      clearInterval(timerInterval);
+      clearInterval(timerInterval); // Clean up the timer interval
     };
   }, [timerActive, timeRemaining, shortBreakDuration]);
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
-  };
-
+  // Handle the reset button click
   const handleReset = () => {
-    setTimerActive(false);
-    setTimeRemaining(shortBreakDuration);
+    setTimerActive(false); // Pause the timer
+    setTimeRemaining(shortBreakDuration); // Reset the timer to the initial duration
   };
 
   return (
     <div>
-      <p>Short Break {formatTime(timeRemaining)}</p>
+      <p>Short Break {remainingSecondsToMinutes(timeRemaining)}</p>
 
-      {timerActive ? (
-        <PauseButton onClick={() => setTimerActive(false)} />
-      ) : (
-        <StartButton onClick={() => setTimerActive(true)} />
-      )}
+      {/* Display the appropriate button based on the timer's state */}
+      <TimerButton
+        type={timerActive ? "pause" : "start"}
+        onClick={() => setTimerActive(!timerActive)}
+      />
 
-      <ResetButton onClick={handleReset} />
-
-      {timeRemaining <= 0 && <FinishedSound src='public/success-sound.mp3' />}
+      {/* Reset button */}
+      <TimerButton type='reset' onClick={handleReset} />
     </div>
   );
 }

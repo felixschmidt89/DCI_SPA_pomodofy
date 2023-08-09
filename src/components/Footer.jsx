@@ -1,27 +1,26 @@
 /** @format */
 
+// Footer.jsx
+
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Footer.module.css";
+import footerData from "../constants/footerData"; // Import the footerData array from the footerData file
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        <a
-          href='https://github.com/felixschmidt89/pomodofy'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a
-          href='https://uib-final-project-bootstrap-version.netlify.app/'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faCopyright} />
-        </a>
+        {/* Map over the footerData array and render each icon with its link */}
+        {footerData.map((item, index) => (
+          <a
+            key={index}
+            href={item.link}
+            target='_blank'
+            rel='noopener noreferrer'>
+            <FontAwesomeIcon icon={item.icon} />
+          </a>
+        ))}
       </div>
     </footer>
   );

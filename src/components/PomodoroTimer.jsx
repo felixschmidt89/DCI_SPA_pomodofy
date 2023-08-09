@@ -2,9 +2,7 @@
 
 import React, { useContext, useState, useEffect } from "react";
 import { TimerContext } from "../contexts/TimerContext";
-import StartButton from "./StartButton";
-import PauseButton from "./PauseButton";
-import ResetButton from "./ResetButton";
+import TimerButton from "./TimerButton"; // Import the TimerButton component
 import { timerMinutesDefault } from "../constants/timerConstants";
 
 function PomodoroTimer() {
@@ -26,10 +24,9 @@ function PomodoroTimer() {
     } else if (timeRemaining <= 0) {
       setTimerActive(false);
       clearInterval(timerInterval);
-      setFinishedSessions((prevSessions) => prevSessions + 1); // Increase finishedSessions
-      setTimeRemaining(timer); // Reset displayed timer to default value
+      setFinishedSessions((prevSessions) => prevSessions + 1);
+      setTimeRemaining(timer);
 
-      // Play finished sound when timer finishes
       const audio = new Audio("public/success-sound.mp3");
       audio.play().catch((error) => {
         console.error("Error playing sound:", error);
@@ -56,15 +53,11 @@ function PomodoroTimer() {
     <div>
       <p>Pomodoro session {formatTime(timeRemaining)}</p>
 
-      {timerActive ? (
-        <PauseButton onClick={() => setTimerActive(false)} />
-      ) : (
-        <StartButton onClick={() => setTimerActive(true)} />
-      )}
-
-      <ResetButton onClick={handleReset} />
-
-      {/* No need for the <FinishedSound /> component here */}
+      <TimerButton
+        type={timerActive ? "pause" : "start"}
+        onClick={() => setTimerActive(!timerActive)}
+      />
+      <TimerButton type='reset' onClick={handleReset} />
     </div>
   );
 }
