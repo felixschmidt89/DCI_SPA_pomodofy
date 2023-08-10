@@ -10,7 +10,6 @@ const infoContent = [
     title: "About",
     content: (
       <div>
-        <h1>About</h1>
         <h2>Pomodofy: The Pomodoro Technique Web App</h2>
         <p>
           Pomodofy is a web application designed to boost productivity and

@@ -13,7 +13,7 @@ const TimerContext = createContext();
 
 const TimerProvider = ({ children }) => {
   const [timer, setTimer] = useState(
-    parseInt(localStorage.getItem("timer")) || timerMinutesDefault * 1
+    parseInt(localStorage.getItem("timer")) || timerMinutesDefault * 60
   );
   const [shortBreakDuration, setShortBreakDuration] = useState(
     parseInt(localStorage.getItem("shortBreakDuration")) ||

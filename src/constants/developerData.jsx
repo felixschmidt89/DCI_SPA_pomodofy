@@ -3,8 +3,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
-// Array of footer icon data, each containing the icon and link information
-const footerData = [
+const developerData = [
   {
     icon: faGithub,
     link: "https://github.com/felixschmidt89/pomodofy",
@@ -13,7 +12,6 @@ const footerData = [
     icon: faCopyright,
     link: "https://uib-final-project-bootstrap-version.netlify.app/",
   },
-  // Add more footer icons as needed
 ];
 
-export default footerData;
+export default developerData;

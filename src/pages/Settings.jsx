@@ -13,7 +13,6 @@ import ResetFinishedSessionsCurrentRound from "../components/ResetFinishedSessio
 const Settings = () => {
   return (
     <div className={styles.container}>
-      <h1>Settings</h1>
       <SetTimerDuration />
       <SetShortBreakDuration />
       <SetLongBreakDuration />

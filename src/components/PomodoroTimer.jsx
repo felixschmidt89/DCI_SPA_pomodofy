@@ -46,7 +46,7 @@ function PomodoroTimer({ onTimerFinish }) {
         setFinishedSessionsCurrentRound((prevSessions) => prevSessions + 1); // Increment finishedSessionsCurrentRound
       }
 
-      playSound("public/success-sound.mp3");
+      playSound("/success-sound.mp3");
       onTimerFinish();
     }
 

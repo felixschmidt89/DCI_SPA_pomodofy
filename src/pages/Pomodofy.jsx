@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import BreakTimer from "../components/BreakTimer";
 import PomodoroTimer from "../components/PomodoroTimer";
+import styles from "./Pomodofy.module.css";
 
 function Pomodofy() {
   const [isPomodoro, setIsPomodoro] = useState(true);
@@ -12,7 +13,7 @@ function Pomodofy() {
   };
 
   return (
-    <main>
+    <main className={styles.container}>
       {isPomodoro ? (
         <PomodoroTimer onTimerFinish={handleTimerFinish} />
       ) : (

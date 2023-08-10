@@ -4,12 +4,14 @@
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-dark--2);
+  text-align: center;
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  justify-content: center;
 }
 
 /* Apply default styles to the timer */

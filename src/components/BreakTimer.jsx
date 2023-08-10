@@ -30,7 +30,7 @@ function BreakTimer({ onTimerFinish }) {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeRemaining <= 0) {
-      playSound("public/break-end-sound.mp3");
+      playSound("/break-end-sound.mp3");
       setTimerActive(false);
       setTimeRemaining(
         sessionFinished ? longBreakDuration : shortBreakDuration
