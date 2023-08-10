@@ -52,7 +52,7 @@ const infoContent = [
             work intervals), take a longer break of around 15-30 minutes.
           </li>
           <li>
-            Customize Work and Break Intervals: While the traditional Pomodoro
+            Customize work and break Intervals: While the traditional Pomodoro
             technique suggests a 25-minute work interval followed by a 5-minute
             break, and a longer break after four Pomodoros, feel free to adjust
             these intervals based on your preferences and work habits.
