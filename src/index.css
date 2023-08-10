@@ -36,4 +36,5 @@ body {
 
 ::selection {
   background-color: var(--color-brand--1);
+  color: var(--dark--0);
 }

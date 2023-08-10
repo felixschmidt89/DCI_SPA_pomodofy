@@ -30,4 +30,5 @@
 .nav a:hover,
 .nav a:active {
   color: var(--color-dark--0);
+  text-decoration: underline;
 }

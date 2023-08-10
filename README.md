@@ -8,7 +8,7 @@ A Pomodoro technique app built using React, created as the final project for the
 
 ## Demo
 
-You can check out the live demo of the app [here](https://your-demo-link.com).
+You can check out the live demo of the app [here](https://pomodofy.netlify.app/).
 
 ## Acknowledgements
 
@@ -33,9 +33,9 @@ You can check out the live demo of the app [here](https://your-demo-link.com).
 - Allow users to pause (and resume) the timer when needed.
 - Implement a reset functionality to start the current timer from the beginning.
 - Implement the pomodoro logic:
-- A round should start with a pomodoro session
-- Pomodoro session should be followed by a short break
-- When a pomodoro round has been completed, pomodoro session should be followed by a long break.
+  - A round should start with a pomodoro session
+  - Pomodoro session should be followed by a short break
+  - When a pomodoro round has been completed, pomodoro session should be followed by a long break.
 - Render the currently active phase only.
 - Display the current phase (pomodoro session, short break or long break)
 - Display the total count of completed pomodoro sessions in the current round.

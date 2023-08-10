@@ -1,11 +1,11 @@
 /** @format */
 
 .container {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1.5rem;
-  max-height: 80vh;
-  overflow-y: auto;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container h1 {
@@ -14,9 +14,4 @@
   margin-bottom: 1rem;
   text-align: center;
   text-decoration: underline;
-}
-
-.container p {
-  font-size: 1.2rem;
-  line-height: 1.6;
 }
