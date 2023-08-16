@@ -7,9 +7,11 @@ import playSound from "../utils/playSoundUtils";
 import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils";
 import styles from "./PomodoroTimer.module.css";
 import RoundProgress from "./CurrentRoundProgress";
-import { activateKeepAwake } from "@sayem314/react-native-keep-awake";
+import NoSleep from "nosleep.js";
 
 function PomodoroTimer({ onTimerFinish }) {
+  const noSleep = new NoSleep();
+
   const {
     timer,
     setFinishedSessions,
@@ -30,7 +32,6 @@ function PomodoroTimer({ onTimerFinish }) {
     let timerInterval;
 
     if (timerActive && timeRemaining > 0) {
-      activateKeepAwake();
       timerInterval = setInterval(() => {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
@@ -70,12 +71,14 @@ function PomodoroTimer({ onTimerFinish }) {
   const handleStart = () => {
     setTimerActive(true); // Start the timer
     setSessionFinished(false); // Prevent bugs regarding rendering BreakTimer afterwards from happening
+    noSleep.enable();
   };
 
   const handleReset = () => {
     setTimerActive(false);
     setTimeRemaining(timer);
     setSessionFinished(false); // Reset sessionFinished
+    noSleep.disable();
   };
 
   return (

@@ -7,9 +7,11 @@ import playSound from "../utils/playSoundUtils"; // Import the playSound functio
 import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils"; // Import the utility function
 import RoundProgress from "./CurrentRoundProgress";
 import styles from "./BreakTimer.module.css";
-import { activateKeepAwake } from "@sayem314/react-native-keep-awake";
+import NoSleep from "nosleep.js";
 
 function BreakTimer({ onTimerFinish }) {
+  const noSleep = new NoSleep();
+
   const {
     shortBreakDuration,
     longBreakDuration,
@@ -30,8 +32,6 @@ function BreakTimer({ onTimerFinish }) {
       timerInterval = setInterval(() => {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
-      // Prevent the screen from sleeping while the timer is active
-      activateKeepAwake();
     } else if (timeRemaining <= 0) {
       playSound("/break-end-sound.mp3");
       setTimerActive(false);
@@ -55,9 +55,19 @@ function BreakTimer({ onTimerFinish }) {
     setSessionFinished,
   ]);
 
+  const handleStart = () => {
+    setTimerActive(!timerActive); // Toggle timerActive
+
+    if (!timerActive) {
+      // If timer is starting (becoming active), enable wake lock
+      noSleep.enable();
+    }
+  };
+
   const handleReset = () => {
     setTimerActive(false);
     setTimeRemaining(sessionFinished ? longBreakDuration : shortBreakDuration);
+    noSleep.disable();
   };
 
   return (
@@ -72,7 +82,7 @@ function BreakTimer({ onTimerFinish }) {
       <div className={styles.buttons}>
         <TimerButton
           type={timerActive ? "pause" : "start"}
-          onClick={() => setTimerActive(!timerActive)}
+          onClick={handleStart}
         />
         <TimerButton type='reset' onClick={handleReset} />
       </div>
