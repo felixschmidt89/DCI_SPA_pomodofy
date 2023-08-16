@@ -140,37 +140,6 @@ const impressumContent = [
       </>
     ),
   },
-  {
-    key: "section6",
-    title: "Disclaimer",
-    content: (
-      <>
-        <p>
-          Die bereitgestellten Informationen auf dieser Website wurden
-          sorgfältig geprüft und werden regelmäßig aktualisiert. Jedoch kann
-          keine Garantie dafür übernommen werden, dass alle Angaben zu jeder
-          Zeit vollständig, richtig und in letzter Aktualität dargestellt sind.
-          Alle Angaben können ohne vorherige Ankündigung geändert, entfernt oder
-          ergänzt werden.
-        </p>
-        <p>
-          Die Betreiber dieser Website sind nicht für die Inhalte externer Links
-          verantwortlich, die in der Regel in einem eigenen Fenster geöffnet
-          werden. Durch den Klick auf externe Links verlassen Sie das Angebot
-          dieser Website. Für den Inhalt der verlinkten Seiten sind
-          ausschließlich deren Betreiber verantwortlich. Jegliche
-          Haftungsansprüche, die aus der Nutzung von Informationen oder Inhalten
-          entstehen, die über die externen Links aufgerufen werden, sind
-          ausgeschlossen.
-        </p>
-        <p>
-          Die Vervielfältigung von Informationen oder Daten, insbesondere die
-          Verwendung von Texten, Textteilen oder Bildmaterial, bedarf der
-          vorherigen Zustimmung des Betreibers.
-        </p>
-      </>
-    ),
-  },
 ];
 
 export default impressumContent;
