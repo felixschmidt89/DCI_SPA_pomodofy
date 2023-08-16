@@ -40,6 +40,7 @@ function BreakTimer({ onTimerFinish }) {
       );
       if (sessionFinished) setSessionFinished(false);
       onTimerFinish();
+      noSleep.disable();
     }
 
     return () => {
@@ -53,13 +54,13 @@ function BreakTimer({ onTimerFinish }) {
     longBreakDuration,
     onTimerFinish,
     setSessionFinished,
+    noSleep,
   ]);
 
   const handleStart = () => {
     setTimerActive(!timerActive); // Toggle timerActive
 
-    if (!timerActive) {
-      // If timer is starting (becoming active), enable wake lock
+    if (timerActive) {
       noSleep.enable();
     }
   };

@@ -51,6 +51,7 @@ function PomodoroTimer({ onTimerFinish }) {
 
       playSound("/success-sound.mp3");
       onTimerFinish();
+      noSleep.disable();
     }
 
     return () => {
@@ -66,6 +67,7 @@ function PomodoroTimer({ onTimerFinish }) {
     finishedSessionsCurrentRound,
     sessionsPerRound,
     onTimerFinish,
+    noSleep,
   ]);
 
   const handleStart = () => {
