@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useMemo } from "react";
 import { TimerContext } from "../contexts/TimerContext";
 import TimerButton from "./TimerButton";
 import playSound from "../utils/playSoundUtils";
@@ -10,8 +10,10 @@ import RoundProgress from "./CurrentRoundProgress";
 import NoSleep from "nosleep.js";
 
 function PomodoroTimer({ onTimerFinish }) {
-  const noSleep = new NoSleep();
+  // Create the noSleep object only once using useMemo
+  const noSleep = useMemo(() => new NoSleep(), []);
 
+  // Extract the necessary context values using destructuring
   const {
     timer,
     setFinishedSessions,
@@ -25,6 +27,7 @@ function PomodoroTimer({ onTimerFinish }) {
   const [timerActive, setTimerActive] = useState(false);
 
   useEffect(() => {
+    // Update timeRemaining whenever the timer value changes
     setTimeRemaining(timer);
   }, [timer]);
 
@@ -32,11 +35,15 @@ function PomodoroTimer({ onTimerFinish }) {
     let timerInterval;
 
     if (timerActive && timeRemaining > 0) {
+      // Start the timer interval if timerActive and timeRemaining are valid
       timerInterval = setInterval(() => {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeRemaining <= 0) {
+      // Timer finished, update states and handle session completion
+
       setTimerActive(false);
+      playSound("/success-sound.mp3");
       clearInterval(timerInterval);
       setFinishedSessions((prevSessions) => prevSessions + 1);
       setTimeRemaining(timer);
@@ -49,7 +56,6 @@ function PomodoroTimer({ onTimerFinish }) {
         setFinishedSessionsCurrentRound((prevSessions) => prevSessions + 1); // Increment finishedSessionsCurrentRound
       }
 
-      playSound("/success-sound.mp3");
       onTimerFinish();
       noSleep.disable();
     }
@@ -73,7 +79,7 @@ function PomodoroTimer({ onTimerFinish }) {
   const handleStart = () => {
     setTimerActive(true); // Start the timer
     setSessionFinished(false); // Prevent bugs regarding rendering BreakTimer afterwards from happening
-    noSleep.enable();
+    noSleep.enable(); // Prevent screen from going to sleep
   };
 
   const handleReset = () => {

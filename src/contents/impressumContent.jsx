@@ -6,25 +6,19 @@ import styles from "../pages/Impressum.module.css";
 const impressumContent = [
   {
     key: "section1",
-    title: "Legal notice",
+    title: "Angaben gemäß § 5 TMG",
     content: (
       <>
-        <h1>Legal notice</h1>
-        <p className={styles.note}>
-          As required by the Telemediengesetz for German websites.
-        </p>
         <p>
-          <h2>Angaben gemäß § 5 TMG</h2>
-          Felix Schmidt <br />
-          Paul-Grasse-Straße 2 <br />
-          10409 Berlin <br />
-          <br />
-          <h2>Vertreten durch</h2>
+          <address>
+            Felix Schmidt <br />
+            Paul-Grasse-Straße 2 <br />
+            10409 Berlin <br />
+          </address>
+          <h3>Vertreten durch</h3>
           Felix Schmidt
           <br />
-          <br />
-          <h2>Kontakt</h2>
-          <br />
+          <h3>Kontakt</h3>
           Telefon: 030-98354489 <br />
           E-Mail:{" "}
           <a href='mailto:felix.schmidt@protonmail.com'>
@@ -39,7 +33,6 @@ const impressumContent = [
     title: "Haftung für Inhalte",
     content: (
       <>
-        <h2>Haftung für Inhalte</h2>
         <p>
           Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für
           die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir
@@ -64,7 +57,6 @@ const impressumContent = [
     title: "Haftung für Links",
     content: (
       <>
-        <h2>Haftung für Links</h2>
         <p>
           Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
           Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
@@ -86,7 +78,6 @@ const impressumContent = [
     title: "Urheberrecht",
     content: (
       <>
-        <h2>Urheberrecht</h2>
         <p>
           Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
           Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
@@ -109,7 +100,6 @@ const impressumContent = [
     title: "Datenschutz",
     content: (
       <>
-        <h2>Datenschutz</h2>
         <p>
           Die Nutzung unserer Webseite ist in der Regel ohne Angabe
           personenbezogener Daten möglich. Soweit auf unseren Seiten
@@ -156,7 +146,6 @@ const impressumContent = [
     title: "Disclaimer",
     content: (
       <>
-        <h2>Disclaimer</h2>
         <p>
           Die bereitgestellten Informationen auf dieser Website wurden
           sorgfältig geprüft und werden regelmäßig aktualisiert. Jedoch kann

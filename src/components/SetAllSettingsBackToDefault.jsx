@@ -12,6 +12,8 @@ import {
 import styles from "./SetAllSettingsBackToDefault.module.css";
 
 const SetAllSettingsBackToDefault = () => {
+  // Access the TimerContext to retrieve and update settings
+
   const {
     timer,
     setTimer,
@@ -23,6 +25,7 @@ const SetAllSettingsBackToDefault = () => {
     setLongBreakDuration,
   } = useContext(TimerContext);
 
+  // Function to reset all settings to their default values
   const handleUndoAll = () => {
     setTimer(timerMinutesDefault * 60);
     setShortBreakDuration(shortBreakDurationDefault * 60);
@@ -30,6 +33,7 @@ const SetAllSettingsBackToDefault = () => {
     setLongBreakDuration(longBreakDurationDefault * 60);
   };
 
+  // Determine whether the "Set default settings" button should be rendered
   const shouldRenderUndoAllButton =
     timer !== timerMinutesDefault * 60 ||
     shortBreakDuration !== shortBreakDurationDefault * 60 ||
@@ -38,6 +42,7 @@ const SetAllSettingsBackToDefault = () => {
 
   return (
     <div className={styles.container}>
+      {/* Render the "Set default settings" button if needed */}
       {shouldRenderUndoAllButton && (
         <UndoButton onUndo={handleUndoAll}>Set default settings</UndoButton>
       )}

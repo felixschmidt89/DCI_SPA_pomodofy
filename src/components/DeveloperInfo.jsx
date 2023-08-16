@@ -17,6 +17,7 @@ const DeveloperInfo = () => {
           href={item.link}
           target='_blank'
           rel='noopener noreferrer'>
+          {/* Render the FontAwesomeIcon using the icon from developerData */}
           <FontAwesomeIcon icon={item.icon} />
         </a>
       ))}

@@ -5,11 +5,12 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { navLinks } from "../constants/navigationData"; // Import the navLinks array
 
-import styles from "./FooterNav.module.css"; // You can create a separate CSS module for styling
+import styles from "./FooterNav.module.css";
 
 const FooterNav = () => {
   return (
     <div className={styles.container}>
+      {/* Map over the navLinks array and render each NavLink */}
       {navLinks.map((item, index) => (
         <NavLink
           key={index}

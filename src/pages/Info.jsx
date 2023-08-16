@@ -12,6 +12,7 @@ function Info() {
       {/* Map over the infoContent array */}
       {infoContent.map((section) => (
         <div key={section.key}>
+          <h2>{section.title}</h2>
           {section.content} {/* Render the content for each section */}
         </div>
       ))}

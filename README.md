@@ -17,7 +17,7 @@ You can check out the live demo of the app [here](https://pomodofy.netlify.app/)
 
 ## MVP requirements / detailed functionality
 
-### Design:
+### Design
 
 - Design a responsive layout that supports mobile devices including a hamburger menu.
 - Include a page explaining the pomodoro technique and the app
@@ -25,7 +25,7 @@ You can check out the live demo of the app [here](https://pomodofy.netlify.app/)
 - Include a footer with links the GitHub repository & developer’s website.
 - Place the timer prominently in the main section of the application.
 
-### Timer:
+### Timer
 
 - Display the active timer prominently and constantly during active pomodoro sessions and breaks
 - Update the timer every second to provide accurate time tracking.
@@ -42,7 +42,7 @@ You can check out the live demo of the app [here](https://pomodofy.netlify.app/)
 - Give audio feedback when a timer has finished. Play different sound depending on whether a pomodoro session or a break has been completed.
 - Allow users to resume current session (sync timer states with localStorage of the browser)
 
-### Settings:
+### Settingsb
 
 - Sync user settings in LocalStorage of the browser for persistent configuration
 - Allow users to customize the durations of pomodoro sessions, short breaks, and long breaks.

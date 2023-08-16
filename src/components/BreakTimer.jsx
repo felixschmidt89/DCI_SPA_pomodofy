@@ -1,29 +1,30 @@
 /** @format */
 
-import React, { useContext, useState, useEffect } from "react";
-import { TimerContext } from "../contexts/TimerContext";
-import TimerButton from "./TimerButton";
-import playSound from "../utils/playSoundUtils"; // Import the playSound function
-import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils"; // Import the utility function
-import RoundProgress from "./CurrentRoundProgress";
-import styles from "./BreakTimer.module.css";
-import NoSleep from "nosleep.js";
+import React, { useContext, useState, useEffect, useMemo } from "react"; // Import necessary hooks
+import { TimerContext } from "../contexts/TimerContext"; // Import TimerContext
+import TimerButton from "./TimerButton"; // Import TimerButton component
+import RoundProgress from "./CurrentRoundProgress"; // Import RoundProgress component
+import playSound from "../utils/playSoundUtils"; // Import playSound utility function
+import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils"; // Import remainingSecondsToMinutes utility function
+import styles from "./BreakTimer.module.css"; // Import CSS styles
+import NoSleep from "nosleep.js"; // Import NoSleep library to prevent screen from going to sleep
 
 function BreakTimer({ onTimerFinish }) {
-  const noSleep = new NoSleep();
+  // Create the noSleep object only once
+  const noSleep = useMemo(() => new NoSleep(), []);
 
   const {
     shortBreakDuration,
     longBreakDuration,
     sessionFinished,
     setSessionFinished,
-  } = useContext(TimerContext);
+  } = useContext(TimerContext); // Access values from TimerContext
 
   const [timeRemaining, setTimeRemaining] = useState(
     sessionFinished ? longBreakDuration : shortBreakDuration
-  );
+  ); // Initialize timeRemaining state depending on current Pomodoro session status
 
-  const [timerActive, setTimerActive] = useState(false);
+  const [timerActive, setTimerActive] = useState(false); // Initialize timerActive state, pause timer on mount
 
   useEffect(() => {
     let timerInterval;
@@ -33,14 +34,14 @@ function BreakTimer({ onTimerFinish }) {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeRemaining <= 0) {
-      playSound("/break-end-sound.mp3");
+      playSound("/break-end-sound.mp3"); // Play sound when break ends
       setTimerActive(false);
       setTimeRemaining(
         sessionFinished ? longBreakDuration : shortBreakDuration
-      );
-      if (sessionFinished) setSessionFinished(false);
+      ); // Reset timeRemaining
+      if (sessionFinished) setSessionFinished(false); // If current Pomodoro session is finished, reset it
       onTimerFinish();
-      noSleep.disable();
+      noSleep.disable(); // Disable NoSleep to allow the screen to sleep
     }
 
     return () => {
@@ -60,15 +61,16 @@ function BreakTimer({ onTimerFinish }) {
   const handleStart = () => {
     setTimerActive(!timerActive); // Toggle timerActive
 
-    if (timerActive) {
+    if (!timerActive) {
+      // If timer is starting (becoming active), prevent screen from going to sleep
       noSleep.enable();
     }
   };
 
   const handleReset = () => {
     setTimerActive(false);
-    setTimeRemaining(sessionFinished ? longBreakDuration : shortBreakDuration);
-    noSleep.disable();
+    setTimeRemaining(sessionFinished ? longBreakDuration : shortBreakDuration); // Reset timeRemaining on reset
+    noSleep.disable(); // Disable NoSleep when resetting
   };
 
   return (
@@ -82,7 +84,7 @@ function BreakTimer({ onTimerFinish }) {
 
       <div className={styles.buttons}>
         <TimerButton
-          type={timerActive ? "pause" : "start"}
+          type={timerActive ? "pause" : "start"} // conditionally render button depending on timerActive
           onClick={handleStart}
         />
         <TimerButton type='reset' onClick={handleReset} />

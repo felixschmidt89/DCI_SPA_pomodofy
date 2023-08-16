@@ -7,11 +7,12 @@ import {
   longBreakDurationDefault,
   sessionsPerRoundDefault,
   finishedSessionsDefault,
-} from "../constants/timerConstants";
+} from "../constants/timerConstants"; // Import the default values
 
-const TimerContext = createContext();
+const TimerContext = createContext(); // Create a context for managing timer data
 
 const TimerProvider = ({ children }) => {
+  // Initialize state variables using localStorage or defaults
   const [timer, setTimer] = useState(
     parseInt(localStorage.getItem("timer")) || timerMinutesDefault * 60
   );
@@ -63,6 +64,7 @@ const TimerProvider = ({ children }) => {
     sessionFinished,
   ]);
 
+  // Provide the state values and setters to the child components
   return (
     <TimerContext.Provider
       value={{
@@ -86,4 +88,4 @@ const TimerProvider = ({ children }) => {
   );
 };
 
-export { TimerContext, TimerProvider };
+export { TimerContext, TimerProvider }; // Export the TimerContext and TimerProvider for use in other components

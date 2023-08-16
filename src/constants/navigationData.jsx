@@ -7,9 +7,10 @@ import {
   faSection,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Array containing navigation links for the navigation bar
 export const navLinks = [
-  { to: "/", text: "Pomodofy", icon: faClock },
-  { to: "/info", text: "Tutorial", icon: faInfo },
-  { to: "/settings", text: "Settings", icon: faCog },
-  { to: "/impressum", text: "Legal notice", icon: faSection },
+  { to: "/", text: "Pomodofy", icon: faClock }, // Home link
+  { to: "/info", text: "Tutorial", icon: faInfo }, // Tutorial link
+  { to: "/settings", text: "Settings", icon: faCog }, // Settings link
+  { to: "/impressum", text: "Legal notice", icon: faSection }, // Legal notice link
 ];

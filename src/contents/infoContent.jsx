@@ -6,28 +6,23 @@ import React from "react";
 
 const infoContent = [
   {
-    key: "about",
-    title: "About",
+    key: "pomodofy",
+    title: "Pomodofy: The Pomodoro Technique Web App",
     content: (
       <div>
-        <h2>Pomodofy: The Pomodoro Technique Web App</h2>
         <p>
           Pomodofy is a web application designed to boost productivity and
           improve focus using the Pomodoro Technique, a time management method
-          developed by Francesco Cirillo in the late 1980s. The app's name,
-          "Pomodofy," combines "Pomodoro" (Italian for tomato, inspired by the
-          tomato-shaped timer) with "modify," signifying the positive
-          transformation the technique brings to users' work routines.
+          developed by Francesco Cirillo in the late 1980s.
         </p>
       </div>
     ),
   },
   {
     key: "how-it-works",
-    title: "How the Pomodoro Technique Works",
+    title: "Here's how it works:",
     content: (
       <div>
-        <h2>Here's how the Pomodoro Technique works:</h2>
         <ol>
           <li>Choose a task: Select a task or project you want to work on.</li>
           <li>

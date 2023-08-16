@@ -6,6 +6,7 @@ import PomodoroTimer from "../components/PomodoroTimer";
 import styles from "./Pomodofy.module.css";
 
 function Pomodofy() {
+  // State to track whether the current timer is Pomodoro or BreakTimer, start with Pomodoro.
   const [isPomodoro, setIsPomodoro] = useState(true);
 
   const handleTimerFinish = () => {
@@ -14,6 +15,7 @@ function Pomodofy() {
 
   return (
     <main className={styles.container}>
+      {/* Render PomodoroTimer or BreakTimer based on isPomodoro state */}
       {isPomodoro ? (
         <PomodoroTimer onTimerFinish={handleTimerFinish} />
       ) : (

@@ -21,35 +21,31 @@
   gap: 1rem;
 }
 
-/* Apply default styles to the timer */
 .timer {
   font-family: "Roboto Mono", monospace;
   line-height: 0.9;
   color: var(--color-dark--1);
 }
 
-/* Apply styles for very small screens */
+/* Timer media queries */
 @media (max-width: 320px) {
   .timer {
     font-size: 6rem;
   }
 }
 
-/* Apply styles for small screens */
 @media (min-width: 321px) and (max-width: 767px) {
   .timer {
     font-size: 11rem;
   }
 }
 
-/* Apply styles for medium screens */
 @media (min-width: 768px) and (max-width: 1023px) {
   .timer {
     font-size: 20rem;
   }
 }
 
-/* Apply styles for large screens */
 @media (min-width: 1024px) {
   .timer {
     font-size: 25rem;
