@@ -1,6 +1,6 @@
 /** @format */
 
-// // Production defaults
+// Production defaults
 
 export const timerMinutesDefault = 25;
 export const shortBreakDurationDefault = 5;
@@ -12,5 +12,5 @@ export const finishedSessionsDefault = 0;
 // export const timerMinutesDefault = 0.05;
 // export const shortBreakDurationDefault = 0.05;
 // export const longBreakDurationDefault = 0.05;
-// export const sessionsPerRoundDefault = 3;
+// export const sessionsPerRoundDefault = 2;
 // export const finishedSessionsDefault = 0;

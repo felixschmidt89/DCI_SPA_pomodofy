@@ -30,7 +30,7 @@ const SetShortBreakDuration = () => {
   return (
     <div className={styles.container}>
       <label>
-        Short break duration:
+        Short break:
         <input
           type='range'
           value={shortBreakDuration / 60}

@@ -27,7 +27,7 @@ const SetLongBreakDuration = () => {
   return (
     <div className={styles.container}>
       <label>
-        Long break duration:
+        Long break:
         <input
           type='range'
           value={longBreakDuration / 60}

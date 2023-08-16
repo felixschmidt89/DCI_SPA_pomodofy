@@ -30,7 +30,7 @@ const SetSessionsPerRound = () => {
   return (
     <div className={styles.container}>
       <label>
-        Sessions per round:
+        Sessions/round:
         <input
           type='range'
           value={sessionsPerRound}

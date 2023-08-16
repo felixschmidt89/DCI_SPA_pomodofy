@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import styles from "../pages/Impressum.module.css";
 
 const impressumContent = [
   {
