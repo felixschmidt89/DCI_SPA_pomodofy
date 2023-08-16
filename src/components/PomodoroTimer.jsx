@@ -7,6 +7,7 @@ import playSound from "../utils/playSoundUtils";
 import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils";
 import styles from "./PomodoroTimer.module.css";
 import RoundProgress from "./CurrentRoundProgress";
+import { activateKeepAwake } from "@sayem314/react-native-keep-awake";
 
 function PomodoroTimer({ onTimerFinish }) {
   const {
@@ -68,6 +69,7 @@ function PomodoroTimer({ onTimerFinish }) {
   const handleStart = () => {
     setTimerActive(true); // Start the timer
     setSessionFinished(false); // Prevent bugs regarding rendering BreakTimer afterwards from happening
+    activateKeepAwake();
   };
 
   const handleReset = () => {

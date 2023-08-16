@@ -7,6 +7,7 @@ import playSound from "../utils/playSoundUtils"; // Import the playSound functio
 import { remainingSecondsToMinutes } from "../utils/remainingSecondsToMinutesUtils"; // Import the utility function
 import RoundProgress from "./CurrentRoundProgress";
 import styles from "./BreakTimer.module.css";
+import { activateKeepAwake } from "@sayem314/react-native-keep-awake";
 
 function BreakTimer({ onTimerFinish }) {
   const {
@@ -29,6 +30,8 @@ function BreakTimer({ onTimerFinish }) {
       timerInterval = setInterval(() => {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
+      // Prevent the screen from sleeping while the timer is active
+      activateKeepAwake();
     } else if (timeRemaining <= 0) {
       playSound("/break-end-sound.mp3");
       setTimerActive(false);
