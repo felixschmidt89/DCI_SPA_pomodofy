@@ -1,35 +1,44 @@
 /** @format */
 
 import React from "react";
+import styles from "../pages/Impressum.module.css";
 
 const impressumContent = [
   {
     key: "section1",
+    title: "Legal notice (Impressum)",
+    content: (
+      <p className={styles.note}>
+        As required by the Telemediengesetz for German websites.
+      </p>
+    ),
+  },
+
+  {
+    key: "section2",
     title: "Angaben gemäß § 5 TMG",
     content: (
       <>
-        <div className='styles.sectionOne'>
-          <address>
-            Felix Schmidt <br />
-            Paul-Grasse-Straße 2 <br />
-            10409 Berlin <br />
-          </address>
-          <h3>Vertreten durch</h3>
-          <p>Felix Schmidt</p>
-          <h3>Kontakt</h3>
-          <p>
-            Telefon: 030-98354489 <br />
-            E-Mail:{" "}
-            <a href='mailto:felix.schmidt@protonmail.com'>
-              felix.schmidt@protonmail.com
-            </a>
-          </p>
-        </div>
+        <address>
+          Felix Schmidt <br />
+          Paul-Grasse-Straße 2 <br />
+          10409 Berlin <br />
+        </address>
+        <h3>Vertreten durch</h3>
+        <p>Felix Schmidt</p>
+        <h3>Kontakt</h3>
+        <p>
+          Telefon: 030-98354489 <br />
+          E-Mail:{" "}
+          <a href='mailto:felix.schmidt@protonmail.com'>
+            felix.schmidt@protonmail.com
+          </a>
+        </p>
       </>
     ),
   },
   {
-    key: "section2",
+    key: "section3",
     title: "Haftung für Inhalte",
     content: (
       <>
@@ -53,7 +62,7 @@ const impressumContent = [
     ),
   },
   {
-    key: "section3",
+    key: "section4",
     title: "Haftung für Links",
     content: (
       <>
@@ -74,7 +83,7 @@ const impressumContent = [
     ),
   },
   {
-    key: "section4",
+    key: "section5",
     title: "Urheberrecht",
     content: (
       <>
@@ -96,7 +105,7 @@ const impressumContent = [
     ),
   },
   {
-    key: "section5",
+    key: "section6",
     title: "Datenschutz",
     content: (
       <>

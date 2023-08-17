@@ -1,37 +1,25 @@
 /** @format */
-h1,
-h2,
-h3,
-address,
-p {
-  text-align: center;
-  margin-top: 0.5rem;
-}
-.note {
-  font-style: italic;
-  text-align: center;
-  margin-bottom: 1rem;
-}
 
 .container {
   max-width: 60rem;
-  padding: 1.5rem;
+  padding: 1rem;
   max-height: 70vh;
   margin: 0 auto;
   overflow-y: auto;
-}
-
-.container h1 {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 0.8rem;
   text-align: center;
-  text-decoration: underline;
 }
 
-.container p,
-ol {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+h1,
+h2,
+h3 {
+  margin-bottom: 0.6rem;
+}
+
+.note {
+  font-style: italic;
+}
+
+.note,
+section {
+  margin-bottom: 1.6rem;
 }

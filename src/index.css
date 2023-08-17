@@ -38,3 +38,20 @@ body {
   background-color: var(--color-brand--1);
   color: var(--dark--0);
 }
+
+p,
+li {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
