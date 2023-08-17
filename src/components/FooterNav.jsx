@@ -12,11 +12,7 @@ const FooterNav = () => {
     <div className={styles.container}>
       {/* Map over the navLinks array and render each NavLink */}
       {navLinks.map((item, index) => (
-        <NavLink
-          key={index}
-          to={item.to}
-          className={styles.navLink}
-          activeClassName={styles.activeNavLink}>
+        <NavLink key={index} to={item.to}>
           <FontAwesomeIcon icon={item.icon} />
         </NavLink>
       ))}

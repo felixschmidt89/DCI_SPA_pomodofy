@@ -1,4 +1,18 @@
 /** @format */
+h1,
+h2,
+h3,
+address,
+p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.note {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .container {
   max-width: 60rem;
   padding: 1.5rem;
@@ -15,24 +29,9 @@
   text-decoration: underline;
 }
 
-.container h2,
-h3 {
-  text-align: left;
-  margin-top: 0.5rem;
-}
-
-.container h3 {
-  font-size: 1.3rem;
-}
-
-.container p {
+.container p,
+ol {
   font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 0.6rem;
-}
-
-.note {
-  font-style: italic;
-  text-align: center;
   margin-bottom: 1rem;
 }

@@ -43,12 +43,11 @@ const infoContent = [
             minutes.
           </li>
           <li>
-            (Optional:) Customize work and break intervals: While the
-            traditional Pomodoro technique suggests a 25-minute work interval
-            followed by a 5-minute break, and a longer break after four
-            Pomodoros, feel free to adjust these intervals based on your
-            preferences and work habits. Experiment with different timings to
-            find what suits you best.
+            (Optional:) Customize: While the traditional Pomodoro technique
+            suggests a 25-minute work interval followed by a 5-minute break, and
+            a longer break after four Pomodoros, feel free to adjust these
+            intervals based on your preferences and work habits. Experiment with
+            different timings to find what suits you best.
           </li>
         </ol>
       </div>

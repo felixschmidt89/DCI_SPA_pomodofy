@@ -13,7 +13,7 @@ function PomodoroTimer({ onTimerFinish }) {
   // Create the noSleep object only once using useMemo
   const noSleep = useMemo(() => new NoSleep(), []);
 
-  // Extract the necessary context values using destructuring
+  // Extract the necessary global state using destructuring
   const {
     timer,
     setFinishedSessions,
@@ -23,20 +23,17 @@ function PomodoroTimer({ onTimerFinish }) {
     sessionsPerRound,
   } = useContext(TimerContext);
 
+  // local states, use global states as defaults
   const [timeRemaining, setTimeRemaining] = useState(timer);
   const [timerActive, setTimerActive] = useState(false);
 
   useEffect(() => {
-    // Update timeRemaining whenever the timer value changes
-    setTimeRemaining(timer);
-  }, [timer]);
-
-  useEffect(() => {
+    // timer functionality:
     let timerInterval;
-
     if (timerActive && timeRemaining > 0) {
-      // Start the timer interval if timerActive and timeRemaining are valid
+      // Start the timer interval only if timer is active and time is remaining
       timerInterval = setInterval(() => {
+        // Decrease the time remaining by 1 second
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeRemaining <= 0) {
@@ -44,9 +41,8 @@ function PomodoroTimer({ onTimerFinish }) {
 
       setTimerActive(false);
       playSound("/success-sound.mp3");
-      clearInterval(timerInterval);
-      setFinishedSessions((prevSessions) => prevSessions + 1);
-      setTimeRemaining(timer);
+      setFinishedSessions((prevSessions) => prevSessions + 1); // increment finished total session count
+      setTimeRemaining(timer); // Reset local state
 
       if (finishedSessionsCurrentRound + 1 === sessionsPerRound) {
         setSessionFinished(true); // Set sessionFinished to true
@@ -56,10 +52,11 @@ function PomodoroTimer({ onTimerFinish }) {
         setFinishedSessionsCurrentRound((prevSessions) => prevSessions + 1); // Increment finishedSessionsCurrentRound
       }
 
-      onTimerFinish();
-      noSleep.disable();
+      onTimerFinish(); // toggle parent's state to show BreakTimer next
+      noSleep.disable(); // allow screen to sleep again
     }
 
+    // cleanup function ensuring that the timer is stopped
     return () => {
       clearInterval(timerInterval);
     };

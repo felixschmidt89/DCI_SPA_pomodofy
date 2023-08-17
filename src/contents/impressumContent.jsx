@@ -8,22 +8,23 @@ const impressumContent = [
     title: "Angaben gemäß § 5 TMG",
     content: (
       <>
-        <p>
+        <div className='styles.sectionOne'>
           <address>
             Felix Schmidt <br />
             Paul-Grasse-Straße 2 <br />
             10409 Berlin <br />
           </address>
           <h3>Vertreten durch</h3>
-          Felix Schmidt
-          <br />
+          <p>Felix Schmidt</p>
           <h3>Kontakt</h3>
-          Telefon: 030-98354489 <br />
-          E-Mail:{" "}
-          <a href='mailto:felix.schmidt@protonmail.com'>
-            felix.schmidt@protonmail.com
-          </a>
-        </p>
+          <p>
+            Telefon: 030-98354489 <br />
+            E-Mail:{" "}
+            <a href='mailto:felix.schmidt@protonmail.com'>
+              felix.schmidt@protonmail.com
+            </a>
+          </p>
+        </div>
       </>
     ),
   },

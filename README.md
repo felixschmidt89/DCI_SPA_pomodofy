@@ -13,9 +13,8 @@ You can check out the live demo of the app [here](https://pomodofy.netlify.app/)
 ## Acknowledgements
 
 - Pomodoro Technique inspiration from Francesco Cirillo.
+- [NoSleep.js](https://github.com/richtr/NoSleep.js)to prevent display from sleeping during pomodoro sessions and breaks.
 - Timer sound effects from [pixabay](https://pixabay.com/) and [UNIVERSFIELD](https://pixabay.com/de/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123107)
-
--[NoSleep.js](https://github.com/richtr/NoSleep.js)to prevent display from sleeping during pomodoro sessions and breaks.
 
 ## MVP requirements / detailed functionality
 
