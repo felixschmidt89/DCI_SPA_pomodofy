@@ -34,7 +34,7 @@
 .navLinks li a {
   text-decoration: none;
   color: var(--color-light--1); /* Use the defined color variable */
-  transition: color 0.3s ease-in-out;
+  transition: color 0.1s ease-in-out;
   text-transform: uppercase;
 }
 

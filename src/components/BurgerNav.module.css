@@ -2,7 +2,7 @@
 
 .nav {
   display: flex;
-  flex-direction: row; /* Adjust the flex direction for mobile layout */
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   width: 98vw;

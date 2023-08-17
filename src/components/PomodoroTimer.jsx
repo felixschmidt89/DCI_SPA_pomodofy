@@ -88,7 +88,7 @@ function PomodoroTimer({ onTimerFinish }) {
 
   return (
     <div className={styles.container}>
-      <p className={styles.sessionType}>Pomodoro session</p>
+      <p className={styles.sessionType}>Pomodoro </p>
       <span className={styles.timer}>
         {remainingSecondsToMinutes(timeRemaining)}
       </span>

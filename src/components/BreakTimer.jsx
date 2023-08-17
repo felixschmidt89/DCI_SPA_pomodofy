@@ -27,6 +27,10 @@ function BreakTimer({ onTimerFinish }) {
   const [timerActive, setTimerActive] = useState(false); // Initialize timerActive state, pause timer on mount
 
   useEffect(() => {
+    handleStart(); // Automatically start the BreakTimer on mount
+  }, []);
+
+  useEffect(() => {
     let timerInterval;
 
     if (timerActive && timeRemaining > 0) {
@@ -76,7 +80,7 @@ function BreakTimer({ onTimerFinish }) {
   return (
     <div className={styles.container}>
       <p className={styles.sessionType}>
-        {sessionFinished ? "Long Break" : "Short Break"}{" "}
+        {sessionFinished ? "Long break" : "Short break"}{" "}
       </p>
       <div className={styles.timer}>
         {remainingSecondsToMinutes(timeRemaining)}
