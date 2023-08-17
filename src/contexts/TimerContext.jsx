@@ -39,7 +39,7 @@ const TimerProvider = ({ children }) => {
     );
 
   const [sessionFinished, setSessionFinished] = useState(
-    localStorage.getItem("sessionFinished") === "true" || false
+    localStorage.getItem("sessionFinished") || false
   );
 
   // Update localStorage whenever the state changes
