@@ -6,7 +6,8 @@
   justify-content: center;
 }
 
-.container label {
+.container label,
+input {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0.5rem;

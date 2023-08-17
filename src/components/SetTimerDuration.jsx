@@ -23,7 +23,8 @@ const SetTimerDuration = () => {
   return (
     <div className={styles.container}>
       <label>
-        Session duration:
+        Pomodoro duration:
+        <br />
         <input
           type='range'
           value={timer / 60}
@@ -31,9 +32,10 @@ const SetTimerDuration = () => {
           min={15}
           max={45}
         />
-        {timer / 60} minutes
+        <br />
+        {timer / 60} minutes{" "}
+        {shouldRenderUndoButton && <UndoButton onUndo={handleReset} />}
       </label>
-      {shouldRenderUndoButton && <UndoButton onUndo={handleReset} />}
     </div>
   );
 };

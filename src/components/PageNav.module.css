@@ -3,16 +3,13 @@
 .nav {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  width: 98%;
 }
 
 .nav ul {
   list-style: none;
   display: flex;
-  align-items: center;
   gap: 4rem;
   margin-right: 4rem;
   align-self: center;
@@ -23,7 +20,7 @@
   text-decoration: none;
   color: var(--color-dark--2);
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 

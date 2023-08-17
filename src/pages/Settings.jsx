@@ -1,12 +1,9 @@
 /** @format */
 
 import React from "react";
-import styles from "./Settings.module.css"; // Import styles
-
-// Import components used in this module
-import SetLongBreakDuration from "../components/SetLongBreakDuration";
+import styles from "./Settings.module.css";
+import SetBreakDuration from "../components/SetBreakDuration"; // Update the import
 import SetSessionsPerRound from "../components/SetSessionsPerRound";
-import SetShortBreakDuration from "../components/SetShortBreakDuration";
 import SetTimerDuration from "../components/SetTimerDuration";
 import SetAllSettingsBackToDefault from "../components/SetAllSettingsBackToDefault";
 import ResetFinishedSessionsCurrentRound from "../components/ResetFinishedSessionsCurrentRound";
@@ -14,10 +11,9 @@ import ResetFinishedSessionsCurrentRound from "../components/ResetFinishedSessio
 const Settings = () => {
   return (
     <div className={styles.container}>
-      {/* Render individual settings components */}
       <SetTimerDuration />
-      <SetShortBreakDuration />
-      <SetLongBreakDuration />
+      <SetBreakDuration type='short' /> {/* Pass the 'type' prop */}
+      <SetBreakDuration type='long' /> {/* Pass the 'type' prop */}
       <SetSessionsPerRound />
       <SetAllSettingsBackToDefault />
       <ResetFinishedSessionsCurrentRound />

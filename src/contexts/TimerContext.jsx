@@ -33,7 +33,6 @@ const TimerProvider = ({ children }) => {
     parseInt(localStorage.getItem("finishedSessions")) ||
       finishedSessionsDefault
   );
-
   const [finishedSessionsCurrentRound, setFinishedSessionsCurrentRound] =
     useState(
       parseInt(localStorage.getItem("finishedSessionsCurrentRound")) || 0

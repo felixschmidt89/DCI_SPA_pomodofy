@@ -24,23 +24,22 @@ const SetSessionsPerRound = () => {
   // Determine whether to render the UndoButton based on changes from the default value
   const shouldRenderUndoButton = sessionsPerRound !== sessionsPerRoundDefault;
 
-  // Check if only a single session per round is selected
-  const isSingleSession = sessionsPerRound === 1;
-
   return (
     <div className={styles.container}>
       <label>
-        Sessions/round:
+        Pomodoros per round: <br />
         <input
           type='range'
           value={sessionsPerRound}
           onChange={handleSessionsPerRoundChange}
           min={2}
           max={8}
-        />
-        {sessionsPerRound} {isSingleSession ? "pomodoro" : "pomodoros"}
+        />{" "}
+        <br />
+        {sessionsPerRound}
+        {" pomodoros"}{" "}
+        {shouldRenderUndoButton && <UndoButton onUndo={handleReset} />}
       </label>
-      {shouldRenderUndoButton && <UndoButton onUndo={handleReset} />}
     </div>
   );
 };

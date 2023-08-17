@@ -22,9 +22,10 @@ const ResetFinishedSessionsCurrentRound = () => {
       {finishedSessionsCurrentRound > 0 && (
         <div className={styles.container}>
           {/* Render the UndoButton component and provide the handleReset function */}
-          <UndoButton onUndo={handleReset}>
+          <span>
             Reset finished sessions current round
-          </UndoButton>
+            <UndoButton onUndo={handleReset}></UndoButton>
+          </span>
         </div>
       )}
     </>

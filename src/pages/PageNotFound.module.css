@@ -1,17 +1,5 @@
 /** @format */
-
-.container {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1.5rem;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
 .container h1 {
-  font-weight: bold;
-  margin-bottom: 1rem;
   text-align: center;
-  font-size: 1.6rem;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }

@@ -6,19 +6,20 @@
 
 .undoButton {
   background: none;
-  border: none;
+  border-radius: 25%;
+  width: 2.5rem;
   cursor: pointer;
   font-family: "Roboto Serif", serif;
   color: var(--color-dark--2);
 }
 
 .buttonText {
-  font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-dark--2);
 }
 
 .buttonText:hover,
 .undoButton:hover {
-  color: var(--color-dark--0);
+  background-color: var(--color-dark--0);
+  color: var(--color-light--3);
 }
