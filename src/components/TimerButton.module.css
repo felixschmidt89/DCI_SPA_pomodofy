@@ -10,10 +10,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: var(--color-dark--2);
-  margin: 0.5rem;
-  padding: 0.5rem;
+  margin: 1.5rem;
 }
 
 .start-button:hover,
