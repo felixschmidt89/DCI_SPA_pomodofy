@@ -27,8 +27,9 @@ function BreakTimer({ onTimerFinish }) {
   const [timerActive, setTimerActive] = useState(false); // Initialize timerActive state, pause timer on mount
 
   useEffect(() => {
-    handleStart(); // Automatically start the BreakTimer on mount
-  }, []);
+    // eslint-disable-next-line
+    handleStart(); // eslint-disable-next-line
+  }, []); // autostart break timer on mount.
 
   useEffect(() => {
     let timerInterval;
