@@ -19,7 +19,7 @@ function App() {
   return (
     <TimerProvider>
       <BrowserRouter>
-        {isMobile ? <BurgerNav /> : <PageNav />}{" "}
+        {isMobile ? <BurgerNav /> : <PageNav />}
         {/* Conditionally render BurgerNav or PageNav */}
         <Routes>
           <Route index element={<Pomodofy />} />
