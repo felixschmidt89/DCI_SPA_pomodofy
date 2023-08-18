@@ -5,4 +5,5 @@
   color: var(--color-dark--2);
   display: flex;
   justify-content: center;
+  font-size: 1.6rem;
 }

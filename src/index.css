@@ -40,7 +40,9 @@ body {
 }
 
 p,
-li {
+li,
+label,
+input {
   font-size: 1.6rem;
 }
 
