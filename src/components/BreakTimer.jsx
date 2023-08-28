@@ -66,10 +66,8 @@ function BreakTimer({ onTimerFinish }) {
   const handleStart = () => {
     setTimerActive(!timerActive); // Toggle timerActive
 
-    if (!timerActive) {
-      // If timer is starting (becoming active), prevent screen from going to sleep
-      noSleep.enable();
-    }
+    // prevent display from sleeping when timer is active
+    timerActive ? noSleep.enable() : noSleep.disable();
   };
 
   const handleReset = () => {

@@ -24,4 +24,4 @@ function BurgerMenu({ menuOpen, navLinks, onNavLinkClick }) {
   );
 }
 
-export default BurgerMenu; // Export the component
+export default BurgerMenu; 

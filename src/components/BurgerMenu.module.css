@@ -15,6 +15,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  z-index: 999;
 }
 
 /* Apply styles to show the menu when open */
