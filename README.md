@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# Pomodofy (Pomodoro Technique App)
+# Pomodofy (Pomodoro Technique Client-side Only SPA)
 
-A Pomodoro technique app built using React, created as the final project for the React module of my Web Dev class at [DCI](https://digitalcareerinstitute.org/courses/web-development/). This app helps you manage your work and breaks effectively.
+A Pomodoro technique app built using React, created as the final project for the React module of my Web Dev class at [DCI](https://digitalcareerinstitute.org/courses/web-development/). This app helps you manage your work and breaks effectively, its enterire logic and rendering are handled on the client side.
 
 <img src="./public/app-image.png" alt="App screenshot" width="200px">
 
