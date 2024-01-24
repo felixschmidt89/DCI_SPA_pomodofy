@@ -16,8 +16,11 @@ You can check out the live demo of the app [here](https://pomodofy.netlify.app/)
 - [NoSleep.js](https://github.com/richtr/NoSleep.js)to prevent display from sleeping during pomodoro sessions and breaks.
 - Timer sound effects from [pixabay](https://pixabay.com/) and [UNIVERSFIELD](https://pixabay.com/de/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123107)
 
-## MVP requirements / detailed functionality
+## Learnings
+In short, I wasn't able to think in React when I started the project – and quite frankly, also not when I finished it. Looking back, it's such a simple application that could have been much easier and quicker to code if I had understood React fundamentals better (especially in comparison to VanillaJS) and had been able to think in React and write way smaller components.
+In the end, though, the application achieves what I had set out for. At that time, I was only able to write and deploy front-end code. With later knowledge, the timer count would not live in the front end, as this required me to implement a hack to prevent the display from sleeping, which essentially makes the app a battery drainer.
 
+## MVP requirements / detailed functionality
 ### Design
 
 - Design a responsive layout that supports mobile devices including a hamburger menu.
@@ -43,7 +46,7 @@ You can check out the live demo of the app [here](https://pomodofy.netlify.app/)
 - Give audio feedback when a timer has finished. Play different sound depending on whether a pomodoro session or a break has been completed.
 - Allow users to resume current session (sync timer states with localStorage of the browser)
 
-### Settingsb
+### Settings
 
 - Sync user settings in LocalStorage of the browser for persistent configuration
 - Allow users to customize the durations of pomodoro sessions, short breaks, and long breaks.
